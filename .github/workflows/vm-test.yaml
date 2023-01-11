@@ -1,25 +1,25 @@
 name: VM Test
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
     paths:
-      - 'pkg/fanal/vm/**'
-      - 'pkg/fanal/walker/vm.go'
-      - 'pkg/fanal/artifact/vm/**'
-      - 'integration/vm_test.go'
-  pull_request:
+      - "pkg/fanal/vm/**"
+      - "pkg/fanal/walker/vm.go"
+      - "pkg/fanal/artifact/vm/**"
+      - "integration/vm_test.go"
 
 jobs:
   vm-test:
     name: VM Integration Test
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
     steps:
       - name: Checkout
         uses: actions/checkout@v3
 
       - name: Set up Go
-        uses: actions/setup-go@v3
+        uses: adilhusain-s/setup-go@main
         with:
           go-version-file: go.mod
       - name: Run vm integration tests
