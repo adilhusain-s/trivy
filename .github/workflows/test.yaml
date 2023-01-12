@@ -40,9 +40,9 @@ jobs:
         if: matrix.operating-system == 'ubuntu-latest'
 
       # Install tools
-      - uses: aquaproj/aqua-installer@v1.2.0
+      - uses: adilhusain-s/aqua-installer@main
         with:
-          aqua_version: v1.25.0
+          aqua_version: v2.0.1-0
 
       - name: Run unit tests
         run: make test
@@ -75,9 +75,9 @@ jobs:
           go-version-file: go.mod
 
       # Install tools
-      - uses: aquaproj/aqua-installer@v1.1.2
+      - uses: adilhusain-s/aqua-installer@main
         with:
-          aqua_version: v1.25.0
+          aqua_version: v2.0.1-0
 
       - name: Run module integration tests
         shell: bash
